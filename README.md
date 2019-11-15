@@ -1,5 +1,5 @@
 # Assembly Tools
-Assembly utility workflows used to assemble bacterial isolates sequenced on illumina paired end sequencers.
+ Snakemake workflows used to assemble bacterial isolates sequenced on illumina paired end sequencers.
 
 Scripts used to assemble five historical Bacillus anthracis assemblies to be published in Microbiology Resource Annoucements (http://mra.asm.org).  
 
