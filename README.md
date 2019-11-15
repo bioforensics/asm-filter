@@ -12,3 +12,5 @@ The preprocessing.smk snakemake workflow is prepares illumina reads to be assemb
 2. Run "mash screen" against Refseq to check for contamenent.
 3. Estimate Genome size by building a k-mer profile on the reads.
 4. Randomly downsample reads to 150x coverage of the estimated genome size using sample-reads program.
+
+# Snakemake GraphViz Image Here
