@@ -7,10 +7,15 @@ The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbe
 
 # Preprocessing Pair End Reads
 
+## Snakemake DAG
+![Alt text](./preprocess/dag.svg)
+<img src="./preprocess/dag.svg">
+
+## Workflow outline
 The preprocessing.smk snakemake workflow prepares illumina reads to be assembled.
 1. Run fastp to trim adapter sequence, low quality bases, and very short reads.  By default bases below Q20 at ends of reads will be trimmed. Any reads below length 75 and/or containing Ns will be removed.  
 2. Run "mash screen" against Refseq to check for contamenent.
 3. Estimate Genome size by building a k-mer profile on the reads.
 4. Randomly downsample reads to 150x coverage of the estimated genome size using sample-reads program.
 
-# Snakemake GraphViz Image Here
+
