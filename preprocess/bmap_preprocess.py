@@ -8,8 +8,8 @@ import snakemake
 
 # default installation directory
 INSTALL_DIR = "./"
-config_name = "config.yaml"
-default_config = INSTALL_DIR + "config/" + config_name
+config_name = "config.yml"
+default_config = INSTALL_DIR + config_name
 PREFIX = "bmap_"
 
 # return path to config file
@@ -42,13 +42,19 @@ if __name__ == "__main__":
     sample_dir = Path(args.sample)
     seq_dir = sample_dir / "seq"
 
-    CONFIG = ""
-    if args.configfile:
-        CONFIG = args.configfile.name
-    else:
-        CONFIG = findConfig(sample_dir)
+    config = { "samples" : args.sample }
+    if args.qual:
+        config["qual"] = args.qual
+    if args.length:
+        config["minlength"] = args.length
 
-    print(f"config file  is {CONFIG}")
+    configfile = ""
+    if args.configfile:
+        configfile = args.configfile.name
+    else:
+        configfile = findConfig(sample_dir)
+
+    print(f"config file  is {configfile}")
 
 
     if bool(args.r1) ^ bool(args.r2):
@@ -83,9 +89,9 @@ if __name__ == "__main__":
         else:
             r2_target.symlink_to(r2.resolve())
 
-        workflow = INSTALL_DIR + "/preprocess.snk"
+        workflow = INSTALL_DIR + "preprocess.smk"
 
-        snakemake.snakemake(workflow, workdir=sample_dir, configfiles=CONFIG, printshellcmds=True, cores=args.cores)
+        snakemake.snakemake(workflow,  config=config, configfiles=[configfile], printshellcmds=True, cores=args.cores)
                         #, detailed_summary=True)
-                        
+                        # workdir=sample_dir,
 
