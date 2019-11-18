@@ -5,6 +5,11 @@ These workflows have been used to assemble five historical Bacillus anthracis as
 
 The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
+# Installation
+The recommended way to install bmap_preprocess is to download a pre-built singualitry containers from https://cloud.sylabs.io/library/dsommer.
+
+  singularity pull bmap_preprocess.sif library://dsommer/default/bmap/bmap_preprocess
+
 # Preprocessing Pair End Reads
 
 ## Snakemake DAG
