@@ -10,7 +10,7 @@ threads: 8
 qual: 20
 minlength: 75
 
-mashdb: [ 'refseq.genomes..k21s1000.msh' ]
+mashdb: 'db/RefSeq88n.msh'
 qa: [ 'fastp' ]
 covs: [ '150' ]
 
