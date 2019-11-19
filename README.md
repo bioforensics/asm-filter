@@ -27,7 +27,7 @@ Mash Sketch databases for RefSeq release 88:
 * [RefSeq88n.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88n.msh.gz): Genomes (k=21, s=1000), 1.2Gb uncompressed
 * [RefSeq88p.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88p.msh.gz): Proteomes (k=9, s=1000), 1.1Gb uncompressed
 
-5. Edit config.yml with path to mash database
+5. Edit preprocess/config.yml with path to mash database
 ```
 mashdb: path/to/mashdb
 ```
