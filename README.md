@@ -6,8 +6,8 @@ Workflows were used to assemble five historical Bacillus anthracis isolates soon
 The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
 # Installation
-##  installation
-1. Source code installation
+## Source code installation
+1. Install Anaconda
 ```
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh`
@@ -16,7 +16,7 @@ bash Miniconda3-latest-Linux-x86_64.sh`
 * git clone git://github.com/bioforensics/asm_tools
 * [Releases](https://github.com/bioforensics/asm_tools/releases)
  
-3. Setup python environment and install required packages (mash, fastp, etc).
+3. Setup python environment and use conda to install required packages (mash, fastp, etc).
 ```
    cd asm_tools/preprocess
    conda create -f preprocess_env.yml
@@ -27,11 +27,20 @@ Mash Sketch databases for RefSeq release 88:
 * [RefSeq88n.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88n.msh.gz): Genomes (k=21, s=1000), 1.2Gb uncompressed
 * [RefSeq88p.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88p.msh.gz): Proteomes (k=9, s=1000), 1.1Gb uncompressed
 
-5. Edit config.yml file 
+5. Edit config.yml with path to mash database
+```
+mashdb: path/to/mashdb
+```
+
+6. Run the read preprocessing workflow
+```
+path/to/asm_tools/preprocess/bmap_preprocess  -r1 test/seq/test_R1.fastq.gz -r2 test/seq/test_R2.fastq.gz -s sample_name
+```
 
 ## Singulaitry Container installation
 
  > singularity pull bmap_preprocess.sif library://dsommer/default/bmap/bmap_preprocess
+ > singularity exec bmap_preprocess.sif -r1 test/seq/test_R1.fastq.gz -r2 test/seq/test_R2.fastq.gz -s test1
   
 
 

@@ -1,0 +1,14 @@
+name: bmap_preprocess
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - fastp=0.20.0=hdbcaa40_0
+  - jellyfish=0.6.1=py37h14c3975_1000
+  - mash=2.2.2=h3d38be6_1
+  - python=3.7.3=h33d41f4_1
+  - snakemake=5.5=0
+  - snakemake-minimal=5.5=py_0
+
+
