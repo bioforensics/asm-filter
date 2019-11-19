@@ -1,26 +1,26 @@
 # Assembly Tools
- Snakemake workflows used to assemble bacterial isolates sequenced on illumina paired end sequencers.
+Snakemake workflows used to assemble bacterial isolates sequenced on illumina paired end sequencers.
 
 These workflows were used to assemble five historical Bacillus anthracis isolates soon to be published in Microbiology Resource Annoucements (http://mra.asm.org).  
 
 The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
 # Installation
- ## Anaconda installation
- 1. Install Anaconda
- ~~~~wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
- ~~~~bash Miniconda3-latest-Linux-x86_64.sh
+## Anaconda installation
+1. Install Anaconda
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh`
  
- 2. Download asm_tools
- ~~~~git clone git://github.com/bioforensics/asm_tools/edit/master/README.md
+2. Download asm_tools
+   git clone git://github.com/bioforensics/asm_tools/edit/master/README.md
  or
- ~~~~http://github.com/bioforensics/asm_tools/releases
+   http://github.com/bioforensics/asm_tools/releases
  
- 3. Setup python environment and install required packages (mash, fastp, etc). 
- ~~~~cd asm_tools/preprocess
- ~~~~conda create -f preprocess_env.yml
+3. Setup python environment and install required packages (mash, fastp, etc). 
+   cd asm_tools/preprocess
+   conda create -f preprocess_env.yml
 
- 4. (Optional) Download mash database
+4. (Optional) Download mash database
  
 
 ## Singulaitry Container
