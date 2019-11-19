@@ -6,16 +6,15 @@ Workflows were used to assemble five historical Bacillus anthracis isolates soon
 The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
 # Installation
-## Anaconda installation
-1. Install Anaconda
+##  installation
+1. Source code installation
 ```
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh`
 ``` 
 2. Download asm_tools
-   git clone git://github.com/bioforensics/asm_tools
- or
-   [Releases](https://github.com/bioforensics/asm_tools/releases)
+* git clone git://github.com/bioforensics/asm_tools
+* [Releases](https://github.com/bioforensics/asm_tools/releases)
  
 3. Setup python environment and install required packages (mash, fastp, etc).
 ```
@@ -25,13 +24,12 @@ bash Miniconda3-latest-Linux-x86_64.sh`
 
 4. (Optional) Download databases for "mash screen" to check for contanements
 Mash Sketch databases for RefSeq release 88:
-[RefSeq88n.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88n.msh.gz): Genomes (k=21, s=1000), 1.2Gb uncompressed
-[RefSeq88p.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88p.msh.gz): Proteomes (k=9, s=1000), 1.1Gb uncompressed
+* [RefSeq88n.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88n.msh.gz): Genomes (k=21, s=1000), 1.2Gb uncompressed
+* [RefSeq88p.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88p.msh.gz): Proteomes (k=9, s=1000), 1.1Gb uncompressed
 
 5. Edit config.yml file 
 
-## Singulaitry Container
-The recommended way to install bmap_preprocess is to download a pre-built singualitry containers from https://cloud.sylabs.io/library/dsommer.
+## Singulaitry Container installation
 
  > singularity pull bmap_preprocess.sif library://dsommer/default/bmap/bmap_preprocess
   
