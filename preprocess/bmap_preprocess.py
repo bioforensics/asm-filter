@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
         workflow = INSTALL_DIR + "preprocess.smk"
 
-        snakemake.snakemake(workflow,  config=config, configfiles=[configfile], printshellcmds=True, cores=args.cores)
+        snakemake.snakemake(workflow,  config=config, configfile=configfile, printshellcmds=True, cores=args.cores)
                         #, detailed_summary=True)
                         # workdir=sample_dir,
 

@@ -2,11 +2,13 @@ import os
 import snakemake
 import fileinput
 
+sample_cmd = srcdir("sample-reads/sample-reads")
+size_cmd = srcdir("genome_estimation.py")
+
 rule preprocess:
     input:
         expand('{sample}/analysis/mash_screen/results.tab', sample=config["samples"]),
         expand('{sample}/seq/filtered_{sample}_R{pair}.fastq.gz.cov{cov}.fastq', pair=config["pairs"], cov=config["covs"], sample=config["samples"])
-
 
 rule mash_screen:
     input:
@@ -15,7 +17,12 @@ rule mash_screen:
     output:
         '{sample}/analysis/mash_screen/results.tab'
     run:
-        shell('mash screen -p {config[threads]} -w  {config[mashdb]} {input.read1} | sort -gr > {output}')
+        if config["mashdb"] != '':
+            shell('mash screen -p {config[threads]} -w  {config[mashdb]} {input.read1} | sort -gr > {output}')
+        else:
+            shell("touch {output}")
+
+
 
 # create read sketch
 # use mash output estimate genome size
@@ -27,12 +34,13 @@ rule size_downsample:
         expand('{{sample}}/seq/filtered_{{sample}}_R{pair}.fastq.gz.cov{{cov}}.fastq', pair=config["pairs"]),
         sketch='{sample}/analysis/mash_sketch/read_sketch.{cov}.msh'
     run:
-        if config[genome_size] == 0:
-            for line in shell("genome_estimation.py {input} {output.sketch}", iterable=True):
+        if config["genome_size"] == 0:
+            for line in shell("{size_cmd} {input} {output.sketch}", iterable=True):
                 genome_size = line
         else:
             genome_size = config[genome_size]
-        shell("sample-reads {input} {genome_size} {wildcards.cov}")
+
+        shell("{sample_cmd} {input} {genome_size} {wildcards.cov}")
         
 
 # legacy support for cutadapt & fastqc
