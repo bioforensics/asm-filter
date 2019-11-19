@@ -8,9 +8,10 @@ The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbe
 # Installation
 ## Anaconda installation
 1. Install Anaconda
-    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh`
- 
+```
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh`
+``` 
 2. Download asm_tools
    git clone git://github.com/bioforensics/asm_tools/edit/master/README.md
  or
