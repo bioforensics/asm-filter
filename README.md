@@ -13,7 +13,8 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh`
 ``` 
 2. Download asm_tools
-* git clone git://github.com/bioforensics/asm_tools
+* git clone git://github.com/bioforensics/asm_tools\
+OR
 * [Releases](https://github.com/bioforensics/asm_tools/releases)
  
 3. Setup python environment and use conda to install required packages (mash, fastp, etc).
@@ -22,7 +23,7 @@ bash Miniconda3-latest-Linux-x86_64.sh`
    conda create -f preprocess_env.yml
 ```
 
-4. (Optional) Download databases for "mash screen" to check for contanements
+4. (Optional) Download databases for "mash screen" to check for contaminants. <br>
 Mash Sketch databases for RefSeq release 88:
 * [RefSeq88n.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88n.msh.gz): Genomes (k=21, s=1000), 1.2Gb uncompressed
 * [RefSeq88p.msh.gz](https://obj.umiacs.umd.edu/mash/screen/RefSeq88p.msh.gz): Proteomes (k=9, s=1000), 1.1Gb uncompressed
