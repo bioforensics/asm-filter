@@ -1,9 +1,9 @@
 # Assembly Tools
 Snakemake workflows used to assemble bacterial isolates.
 
-Workflows were used to assemble five historical Bacillus anthracis isolates soon to be published in [Microbiology Resource Annoucements](http://mra.asm.org).  
+Workflows were used to assemble five historical Bacillus Anthracis isolates soon to be published in [Microbiology Resource Annoucements](http://mra.asm.org).  
 
-The assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
+The five historical Bacillus Anthracis assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
 # Installation
 ## Source code installation
