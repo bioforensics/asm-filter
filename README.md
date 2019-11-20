@@ -13,9 +13,13 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh`
 ``` 
 2. Download asm_tools
-* git clone git://github.com/bioforensics/asm_tools\
+```
+git clone git://github.com/bioforensics/asm_tools\
+```
 OR
-* [Releases](https://github.com/bioforensics/asm_tools/releases)
+```
+Download a [Release](https://github.com/bioforensics/asm_tools/releases)
+```
  
 3. Setup python environment and use conda to install required packages (mash, fastp, etc).
 ```
