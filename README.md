@@ -6,7 +6,7 @@ Workflows were used to assemble five historical Bacillus Anthracis isolates soon
 The five historical Bacillus Anthracis assemblies have been deposited in DDBJ/ENA/GenBank under the accession numbers (SAMN12620928, SAMN12620929, SAMN12620930, SAMN12620931, SAMN12620932).  The raw Illumina paired end sequencing reads are archived in the SRA under the accession numbers (SRR10019497, SRR10019498, SRR10019499, SRR10019500, SRR10019501).
 
 # Installation
-## Source code installation
+## Read preprocessing workflow installation
 1. Install Anaconda
 ```
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -21,6 +21,7 @@ OR
 ```
    cd asm_tools/preprocess
    conda create -f preprocess_env.yml
+   conda activate bmap_preprocess
 ```
 
 4. (Optional) Download databases for "mash screen" to check for contaminants. <br>
